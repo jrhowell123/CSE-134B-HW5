@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="utf-8">
+    <title>personal portfolio and recruitment site</title>
+  </head>
+  <body>
+    <h1>Simple Dialogs?</h1>
+
+    <button id="alert-btn">Alert</button>
+
+    <button id="confirm-btn">Confirm</button>
+    <output id="confirm-output"></output>
+
+    <button id="prompt-btn">Prompt</button>
+    <output id="prompt-output"></output>
+
+    <button id="safer-prompt-btn">Safer Prompt</button>
+    <output id="safer-prompt-output"></output>
+
+    <script>
+      const alertBtn = document.getElementById('alert-btn');
+      const confirmBtn = document.getElementById('confirm-btn');
+      const confirmOutput = document.getElementById('confirm-output');
+      const promptBtn = document.getElementById('prompt-btn');
+      const promptOutput = document.getElementById('prompt-output');
+      const saferPromptBtn = document.getElementById('safer-prompt-btn');
+      const saferPromptOutput = document.getElementById('safer-prompt-output');
+
+      alertBtn.addEventListener('click', () => {
+        window.alert('This is an alert message!');
+      });
+
+      confirmBtn.addEventListener('click', () => {
+        const result = window.confirm('Are you sure you want to do this?');
+        confirmOutput.textContent = `The value returned by the confirm method is: ${result}`;
+      });
+
+      promptBtn.addEventListener('click', () => {
+        const result = window.prompt('Please enter your name:');
+        if (result === null || result === '') {
+          promptOutput.textContent = `User didn't enter anything.`;
+        } else {
+          promptOutput.textContent = `Hello, ${result}!`;
+        }
+
+      safePromptBtn.addEventListener('click', () => {
+        const result = window.prompt('Please enter your name:');
+        if (result === null || result === '') {
+          promptOutput.textContent = `User didn't enter anything.`;
+        } else {
+          promptOutput.textContent = `Hello, ${result}!`;
+        }
+      });
+    </script>
+  <hr>
+  </body>
+</html>
