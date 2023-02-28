@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>  personal portfolio and recruitment site</title>
+        <link href="Images/botanic_plant_leaf_icon_233211.ico" rel="icon">
+        <Style>
+          *{
+            color: aliceblue;
+            font-family: sans-serif, Arial;
+          }
+            .themecolor{
+                background-color:deepskyblue;
+            }
+            .flex1{
+                display: flex;
+                justify-content: center;
+                justify-content: space-evenly;
+            }
+            .flex2{
+                display: flex;
+                justify-content: center;
+                justify-content: space-evenly;
+                font-size: larg;
+                color: #1565C0;
+            }
+            .flex3{
+                display: flex;
+                justify-content: center;
+                justify-content: space-evenly;
+            }
+            .flex-main{
+                background-image: url(Images/peirForHw.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            .navigation {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: flex-end;
+                
+                list-style: none;
+                margin: 0; 
+                background: deepskyblue;
+              }
+              
+              .navigation a {
+                text-decoration: none;
+                display: block;
+                padding: 1em;
+                color: aliceblue;
+              }
+              
+              .navigation a:hover {
+                background: #1565C0;
+              }
+              
+              @media all and (max-width: 800px) {
+                .navigation {
+                  justify-content: space-around;
+                }
+              }
+              
+              @media all and (max-width: 600px) {
+                .navigation {
+                  flex-flow: column wrap;
+                  padding: 0;
+                }
+                .navigation a { 
+                  text-align: center; 
+                  padding: 10px;
+                  border-top: 1px solid rgba(255, 255, 255,0.3); 
+                  border-bottom: 1px solid rgba(0, 0, 0, 0.1); 
+                }
+                .navigation li:last-of-type a {
+                  border-bottom: none;
+                }
+              }
+        </Style>
+    </head>
+    <body class = "themecolor">
+        <header class = "flex-header">
+            <h1 class="flex1">
+                <strong>Homepage</strong>
+            </h1>
+            <h2 class="flex1">Where are you looking to go?</h2>
+                <nav>
+                    <ul class="navigation">
+                    <li><a href="JohnHowellPersonalPortfolio/ContactSupport.html">Contact Support</a></li>
+                    <li></li><a href="JohnHowellPersonalPortfolio/Resume.html">Resume</a></li>
+                    <li></li><a href="JohnHowellPersonalPortfolio/Projects.html">Projects</a></li>
+                    </ul>
+                </nav>
+        </header>
+        <Main class="flex-main">
+            <p class="flex2"><b>About Me!</b></p><br>
+            <picture class="flex2">
+                <img src="Images/persona.png" alt="persona diagram" height="430" width="700">
+            </picture>
+        </Main>
+        <hr>
+        <footer class="flex-footer">
+                <div class ="flex3"> John Howell UCSD</div>
+        </footer>
+    </body>
+</html>

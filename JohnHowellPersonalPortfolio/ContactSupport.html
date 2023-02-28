@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>  personal portfolio and recruitment site</title>
+        <link href="../Images/botanic_plant_leaf_icon_233211.ico" rel="icon">
+    </head>
+    <style>
+        *{
+            font-family: sans-serif, Arial;
+        }
+        body {
+            display: grid;
+            place-items: center;
+            background-color: deepskyblue;
+            color: aliceblue;
+        }
+        header {
+            text-align: center;
+            font-size: 36px;
+            padding: 10px;
+        }
+        p {
+            text-align: center;
+            font-size: 18px;
+            padding: 10px;
+        }
+        form {
+            background-color: #200df5;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px;
+        }
+        select, input[type="text"], input[type="email"], input[type="date"] {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 1px solid #200df5;
+            width: 60%;
+            color: black;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            animation: wiggle 2s linear infinite;
+        }
+        @keyframes wiggle {
+            0%, 7% {
+              transform: rotateZ(0);
+            }
+            15% {
+              transform: rotateZ(-15deg);
+            }
+            20% {
+              transform: rotateZ(10deg);
+            }
+            25% {
+              transform: rotateZ(-10deg);
+            }
+            30% {
+              transform: rotateZ(6deg);
+            }
+            35% {
+              transform: rotateZ(-4deg);
+            }
+            40%, 100% {
+              transform: rotateZ(0);
+            }
+          }
+        ul, ol {
+            background-color: #200df5;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px #200df5;
+            text-align: center;
+            margin: 20px;
+            list-style-type: none;
+        }
+        li {
+            padding: 10px;
+            font-size: 18px;
+        }
+        audio {
+            width: 60%;
+            margin: 20px;
+            background-color: #200df5;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        footer {
+            background-color: #200df5;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px;
+        }
+        pre {
+            font-size: 18px;
+        }
+        .info{
+            width: 60%;
+            margin: 20px;
+            background-color: #200df5;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center; 
+        }
+        .head{
+            width: 80%;
+            margin: 20px;
+            background-color: #200df5;
+            padding: 5px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        #Reasons{
+            color: black;
+        }
+    </style>
+    <body>
+        <header>Contact Information</header>
+        <p class="head">Reasons to Contact Me!</p> 
+        <ul>
+            <li>For interviews!</li>
+            <li>Questions about resume or prior experience.</li>
+            <li>To tell me about your favorite Pokemon.</li>
+        </ul>
+        <p class="head" >Resaons not to contact me!</p>
+        <ol>
+            <li>If you can't find something at the Grocery store.</li>
+            <li>If you need me to walk your dog.</li>
+        </ol>
+        <form>
+            <fieldset>
+            <legend>Your Info!:</legend>
+            <label for="Reasons">Reason for contacting me:</label>
+            <select name="Reasons" id="Reasons">
+                <option value="....">....</option>
+                <optgroup label="Valid reason">
+                    <option value="interviews">For interviews!</option>
+                    <option value="prior experience">Questions about resume or prior experience.</option>
+                </optgroup>
+                <optgroup label="Invalid Reason">
+                    <option value=" Grocery store">If you can find something at the Grocery store.</option>
+                    <option value="dog walk">If you need me to walk your dog.</option>
+                    </optgroup>
+            </select>
+            <br><br>
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname"><br><br>
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="lname"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="birthday">Birthday:</label>
+            <input type="date" id="birthday" name="birthday"><br><br>
+            <input type="submit" value="Submit">
+        </fieldset>
+        </form>
+        <div class = info>
+            <p>Email <span style="color:rgb(255, 0, 0)">Jackrhowell16@gmail.com</span></p>
+            <p>Phone Number <span style="color:rgb(243, 180, 6)">(925)-768-4320</span></p>
+            <p>School email <span style="color:rgb(0, 255, 145)">jrhowell@ucsd.edu</span></p>
+        </div>
+        <em class = info >Feel Free to reach out !</em>
+        <h1 class="head"> Please listen to hold music if I am not responding</h1>
+        <audio controls>
+            <source src="../Video&audio/elevator-music-bossa-nova-background-music-version-60s-10900.mp3" type="audio/mpeg">
+        </audio>
+        <hr>
+        <footer>
+            <pre>PLEASE    KEEP YOUR    REQUESTS     TO       RESONABLE        HOURS</pre>
+        </footer>
+    </body>
+</html>

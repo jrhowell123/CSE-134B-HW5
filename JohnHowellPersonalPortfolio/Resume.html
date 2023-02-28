@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+    *{
+        font-family: sans-serif, Arial;
+    }
+    h2 {
+        border-style: dotted;
+    }
+    .bgcolor{
+        background-color: deepskyblue;
+    }
+    .center{
+        display: flex;
+        justify-content: center;
+        justify-content: space-evenly;
+        color: aliceblue;
+    }
+    .row{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        justify-content: space-evenly;
+    }
+    .color{
+        color: aliceblue;
+    }
+
+    </style>
+    <head>
+        <meta charset="utf-8">
+        <title>  personal portfolio and recruitment site</title>
+        <link href="../Images/botanic_plant_leaf_icon_233211.ico" rel="icon">
+    </head>
+    <body class="bgcolor">
+        <header>
+            <h1 class = "center">Resume</h1>
+        </header> 
+        <picture class="center">
+            <img src="../Images/resume1.png" alt="Resume Page 1" height="430" width="700">
+            <img src="../Images/resume2.png" alt="Resume Page 2" height="430" width="700">
+        </picture>
+            <main>
+                <h2 class="center">Resume Feedback</h2>
+                <div class="row">
+                    <form>
+                        <textarea cols="50">Be Kind!</textarea>
+                        <br>
+                        <input type="submit" value="Submit">
+                    </form>
+                    <details>
+                        <summary class=" color">linkedin</summary>
+                        <p>This Site will give an overview of of my connections and past experience.</p>
+                    </details>
+                    <iframe src="https://www.linkedin.com/" title="linkedin"></iframe>
+                    <button type="button" onclick="alert('How did you like my resume?')">Click Me!</button>
+                </div>
+            </main>
+            <footer>
+            </footer>
+    </body>
+</html>
