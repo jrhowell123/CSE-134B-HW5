@@ -3,9 +3,12 @@
   <head lang="en">
     <meta charset="utf-8">
     <title>personal portfolio and recruitment site</title>
+    <script type="text/javascript" src = "https://cdn.jsdelivr.net/npm/dompurify@2.4.1/dist/purify.min.js"></script>
+    <script type="module" src="JohnHowellPersonalPortfolio\customdialog.js"></script>
+  </head>
   </head>
   <body>
-    <h1>Simple Dialogs?</h1>
+    <h1>Simple Dialogs</h1>
 
     <button id="alert-btn">Alert</button>
 
@@ -43,13 +46,15 @@
         } else {
           promptOutput.textContent = `Hello, ${result}!`;
         }
+      });
 
-      safePromptBtn.addEventListener('click', () => {
-        const result = window.prompt('Please enter your name:');
+      saferPromptBtn.addEventListener('click', () => {
+        const result = window.prompt('Please enter some HTML:');
+        let sanitizedInput = DOMPurify.sanitize(result);
         if (result === null || result === '') {
-          promptOutput.textContent = `User didn't enter anything.`;
+          saferPromptOutput.textContent = `User didn't enter anything.`;
         } else {
-          promptOutput.textContent = `Hello, ${result}!`;
+          saferPromptOutput.innerHTML = `<p>${sanitizedInput}</p>`;
         }
       });
     </script>
