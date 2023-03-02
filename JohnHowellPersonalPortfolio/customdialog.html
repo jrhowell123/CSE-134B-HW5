@@ -5,20 +5,20 @@
     <title>personal portfolio and recruitment site</title>
   </head>
   <body>
-    <h1>Custom Dialogs</h1>
+    <h1>Ressume Feedback</h1>
     <dialog id="alertDialog">
       <form method="dialog">
         <p>
-          <label>Alert!
+          <label>I hope so!
           </label>
         </p>
         <div>
-          <button value="cancel">ok</button>
+          <button value="cancel">yayaay!!!</button>
         </div>
       </form>
     </dialog>
     <p>
-      <button id="showDialog">Alert!</button>
+      <button id="showDialog">Did you like it</button>
     </p>
     <output></output>
 
@@ -26,7 +26,7 @@
     <dialog id="confirmDialog">
         <form method="dialog">
           <p>
-            <label>'Are you sure you want to do this?'
+            <label>'Do you want to give me resume a thumbs ups?'
             </label>
           </p>
           <div>
@@ -58,10 +58,11 @@
         </form>
       </dialog>
       <p>
-        <button id="showPromptDialog">Prompt!</button>
+        <button id="showPromptDialog">Name</button>
       </p>
       <p class="output" id="promptOutput"></p>
       <output></output>
+  </body>
 
     <script type="module">
       import { showDialog,showConfirmDialog,confirmed,notConfirmed,showPromptDialog,promptCancel,promptInput } from './customdialog.js';
@@ -100,3 +101,8 @@
       });
       
     </script>
+
+    <footer>
+      <p>Link below hows a simple verison of this page to highlight the structe of the sight.</p>
+      <a href="./simpledialog.html">Simple Feedback</a>
+    </footer>
