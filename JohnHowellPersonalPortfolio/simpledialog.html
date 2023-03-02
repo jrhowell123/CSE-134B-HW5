@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <title>personal portfolio and recruitment site</title>
     <script type="text/javascript" src = "https://cdn.jsdelivr.net/npm/dompurify@2.4.1/dist/purify.min.js"></script>
-    <script type="module" src="JohnHowellPersonalPortfolio/customdialog.js"></script>
   </head>
   <body>
     <h1>Simple Dialogs</h1>
@@ -39,11 +38,11 @@
       });
 
       promptBtn.addEventListener('click', () => {
-        const result = window.prompt('Please enter your name:');
+        let result = window.prompt('Please enter your name:');
         if (result === null || result === '') {
           promptOutput.textContent = `User didn't enter anything.`;
         } else {
-          promptOutput.textContent = `Hello, ${result}!`;
+          promptOutput.innerHTML = `<p>Hello, ${result}!</p>`;
         }
       });
 
@@ -58,5 +57,6 @@
       });
     </script>
   <hr>
+  <output></output>
   </body>
 </html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="utf-8">
+    <title>personal portfolio and recruitment site</title>
+  </head>
+  <body>
+    <h1>Custom Dialogs</h1>
+    <dialog id="alertDialog">
+      <form method="dialog">
+        <p>
+          <label>Alert!
+          </label>
+        </p>
+        <div>
+          <button value="cancel">ok</button>
+        </div>
+      </form>
+    </dialog>
+    <p>
+      <button id="showDialog">Alert!</button>
+    </p>
+    <output></output>
+
+
+    <dialog id="confirmDialog">
+        <form method="dialog">
+          <p>
+            <label>'Are you sure you want to do this?'
+            </label>
+          </p>
+          <div>
+            <button id="confirm-btn">Confirm</button>
+            <button id="cancel-btn">Cancel</button>
+          </div>
+        </form>
+      </dialog>
+      <p>
+        <button id="showConfirmDialog">Confirm!</button>
+      </p>
+      <p id = change></p>
+      <output></output>
+
+
+      <dialog id="promptDialog">
+        <form method="dialog">
+          <p>
+            <label>What's your name?
+            </label>
+          </p>
+          <div>
+            <input type="text" id="user" placeholder="....">
+
+            <button id="promptButton">Ok</button>
+
+            <button id="cancel-btn-prompt">Cancel</button>
+          </div>
+        </form>
+      </dialog>
+      <p>
+        <button id="showPromptDialog">Prompt!</button>
+      </p>
+      <p class="output" id="promptOutput"></p>
+      <output></output>
+
+    <script type="module">
+      import { showDialog,showConfirmDialog,confirmed,notConfirmed,showPromptDialog,promptCancel,promptInput } from './customdialog.js';
+      
+      const showButton = document.getElementById('showDialog');
+      const alertDialog = document.getElementById('alertDialog');
+      const showConfirmButton = document.getElementById('showConfirmDialog');
+      const confirmDialog = document.getElementById('confirmDialog');
+      const confirmOutput = document.getElementById('confirm-output');
+      const showPromptButton = document.getElementById('showPromptDialog');
+      const txt = document.getElementById('user');
+      const promptBtn = document.getElementById('promptButton')
+      const output = document.getElementById('promptOutput')
+      const outCancel = document.getElementById('cancel-btn-prompt')
+    
+      showButton.addEventListener('click', () => {
+        showDialog();
+      });
+      showConfirmButton.addEventListener('click', () => {
+        showConfirmDialog(); 
+      });
+      document.getElementById('confirm-btn').addEventListener("click", function() {
+        confirmed();
+     });
+     document.getElementById('cancel-btn').addEventListener("click", function() {
+        notConfirmed();
+      });
+      showPromptButton.addEventListener('click', () => {
+        showPromptDialog(); 
+      });
+      promptBtn.addEventListener('click', () => {
+        promptInput(txt,output);
+      });
+      outCancel.addEventListener('click', () => {
+        promptCancel(output);
+      });
+      
+    </script>

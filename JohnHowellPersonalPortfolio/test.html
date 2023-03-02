@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="utf-8">
+    <title>personal portfolio and recruitment site</title>
+  </head>
+  <body>
+    <dialog id="alertDialog">
+      <form method="dialog">
+        <p>
+          <label>Alert!
+          </label>
+        </p>
+        <div>
+          <button value="cancel">ok</button>
+        </div>
+      </form>
+    </dialog>
+    <p>
+      <button id="showDialog">Alert!</button>
+    </p>
+    <output></output>
+
+
+    <dialog id="confirmDialog">
+        <form method="dialog">
+          <p>
+            <label>'Are you sure you want to do this?'
+            </label>
+          </p>
+          <div>
+            <button id="confirm-btn">Confirm</button>
+            <output id="confirm-output"></output>
+          </div>
+        </form>
+      </dialog>
+      <p>
+        <button id="showConfirmDialog">Confirm!</button>
+      </p>
+      <output></output>
+
+
+    <script type="module">
+      import { showDialog,showConfirmDialog } from './customdialog.js';
+      
+      const showButton = document.getElementById('showDialog');
+      const alertDialog = document.getElementById('alertDialog');
+      const showConfirmButton = document.getElementById('showConfirmDialog');
+      const confirmDialog = document.getElementById('confirmDialog');
+    
+      showButton.addEventListener('click', () => {
+        showDialog();
+      });
+      showConfirmButton.addEventListener('click', () => {
+        showConfirmDialog();
+      });
+      
+    </script>
