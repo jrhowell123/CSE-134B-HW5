@@ -1,0 +1,2 @@
+Chnages:
+    First I went through and added fall bakc images as this is where i lost alot of points in HW3. After this I took out the resume feedbakc section of my website as I ended up integrating in part 2 of the as a new way of resume feedback. I alos added the CRUD as a webiste feedback area and both this and the custom dialog section were added to the nav bar on the main page. I also added in a dummy google analitc coe block intheory to track any foot trafic that comes through my page.
