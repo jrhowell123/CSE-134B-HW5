@@ -2,57 +2,157 @@
 <html>
 <head>
 	<meta charset="utf-8">
-    <title>  personal portfolio and recruitment site</title>
-    <link href="../Images/botanic_plant_leaf_icon_233211.ico" rel="icon">
-	 <script>
-      	function postArticle() {
-  		var xhr = new XMLHttpRequest();
- 	 	xhr.open("POST", "https://httpbin.org/post");
-  		xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-  		xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      console.log(xhr.responseText);
-      document.getElementById("article-form").reset(); // reset form fields
+  <title>  personal portfolio and recruitment site</title>
+  <link href="../Images/botanic_plant_leaf_icon_233211.ico" rel="icon">
+  <style>
+    table {
+      font-family: Arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
     }
-  };
-  var data = JSON.stringify({
+
+    td, th {
+      border: 1px solid #ddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #4c5caf;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+	<form id="article-form">
+    <label for="id">ID:</label>
+    <input type="number" id="id" name="id"><br>
+
+    <label for="article_name">Article Name:</label>
+    <input type="text" id="article_name" name="article_name"><br>
+
+    <label for="article_body">Article Body:</label>
+    <textarea id="article_body" name="article_body"></textarea><br>
+
+    <input type="hidden" id="date" name="date">
+
+    <button type="button" onclick="post()">Post Article</button>
+    <button type="button" onclick="put()">Submit</button>
+	  <p>Look at Example Article</p>
+	  <button type="button" onclick="get()">Request data</button>
+		<output id="gotten"></output>
+    <p>Delete Content</p>
+    <button type="button" onclick="deleteArt()">deletebtn</button>
+    <output id="response"></output>
+  </form>
+  <script>
+    function get() {
+      var getter = new XMLHttpRequest();
+      getter.open("GET", "https://httpbin.org/get", true);
+      getter.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+      getter.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("gotten").innerHTML = this.responseText;
+        }
+      };
+      getter.send();
+    }
+  </script>
+	<script>
+    function post() {
+  		var poster = new XMLHttpRequest();
+ 	 	  poster.open("POST", "https://httpbin.org/post");
+  		poster.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+  		poster.onreadystatechange = function() {
+        if (poster.readyState === 4 && poster.status === 200) {
+          var response = JSON.parse(poster.responseText);
+          var data = response.json;
+
+            var table = "<table>";
+            table += "<tr><th>Field</th><th>Value</th></tr>";
+            table += "<tr><td>ID</td><td>" + data.id + "</td></tr>";
+            table += "<tr><td>Article Name</td><td>" + data.article_name + "</td></tr>";
+            table += "<tr><td>Article Body</td><td>" + data.article_body + "</td></tr>";
+            table += "<tr><td>Date</td><td>" + data.date + "</td></tr>";
+            table += "</table>";
+
+          document.getElementById("response").innerHTML = table;
+          document.getElementById("article-form").reset();
+        }
+      };
+      var input = JSON.stringify({
+      id: document.getElementById("id").value,
+      article_name: document.getElementById("article_name").value,
+      article_body: document.getElementById("article_body").value,
+      date: new Date().toString()
+      });
+      poster.send(input);
+    }
+  </script>
+  <script>
+    function put() {
+      var putter = new XMLHttpRequest();
+      putter.open("PUT", "https://httpbin.org/put");
+      putter.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+      putter.onreadystatechange = function() {
+        if (putter.readyState === 4 && putter.status === 200) {
+          var response = JSON.parse(putter.responseText);
+          var data = response.json;
+
+            var table = "<table>";
+            table += "<tr><th>Field</th><th>Value</th></tr>";
+            table += "<tr><td>ID</td><td>" + data.id + "</td></tr>";
+            table += "<tr><td>Article Name</td><td>" + data.article_name + "</td></tr>";
+            table += "<tr><td>Article Body</td><td>" + data.article_body + "</td></tr>";
+            table += "<tr><td>Date</td><td>" + data.date + "</td></tr>";
+            table += "</table>";
+
+          document.getElementById("response").innerHTML = table;
+          document.getElementById("article-form").reset();
+        }
+      };
+      var data = JSON.stringify({
+      id: document.getElementById("id").value,
+      article_name: document.getElementById("article_name").value,
+      article_body: document.getElementById("article_body").value,
+      date: new Date().toString()
+      });
+      putter.send(data);
+    }
+  </script>
+  <script>
+    function deleteArt() {
+    var deleter = new XMLHttpRequest();
+    deleter.open("DELETE", "https://httpbin.org/delete");
+    deleter.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    deleter.onreadystatechange = function() {
+      if (deleter.readyState === 4 && deleter.status === 200) {
+        var response = JSON.parse(deleter.responseText);
+          var data = response.json;
+
+            var table = "<table>";
+            table += "<tr><th>Field</th><th>Value</th></tr>";
+            table += "<tr><td>ID</td><td>" + data.id + "</td></tr>";
+            table += "<tr><td>Article Name</td><td>" + data.article_name + "</td></tr>";
+            table += "<tr><td>Article Body</td><td>" + data.article_body + "</td></tr>";
+            table += "<tr><td>Date</td><td>" + data.date + "</td></tr>";
+            table += "</table>";
+
+          document.getElementById("response").innerHTML = table;
+          document.getElementById("article-form").reset();
+      }
+    };
+    var data = JSON.stringify({
     id: document.getElementById("id").value,
     article_name: document.getElementById("article_name").value,
     article_body: document.getElementById("article_body").value,
     date: new Date().toString()
-  });
-  xhr.send(data);
-}
-</script>
-<script>
-function loadDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("demo").innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "https://httpbin.org/get", true);
-  xhttp.send();
-}
-</script>
-</head>
-<body>
-	<form id="article-form">
-      	<label for="id">ID:</label>
-      	<input type="number" id="id" name="id"><br>
-
-      	<label for="article_name">Article Name:</label>
-      	<input type="text" id="article_name" name="article_name"><br>
-
-      	<label for="article_body">Article Body:</label>
-      	<textarea id="article_body" name="article_body"></textarea><br>
-
-      	<input type="hidden" id="date" name="date">
-
-      	<button type="button" onclick="postArticle()">Post Article</button>
-	  	<p>Look at Example Article</p>
-	  	<button type="button" onclick="loadDoc()">Request data</button>
-		<p id="demo"></p>
-    </form>
+    });
+    deleter.send(data);
+  }
+  </script>
 </body>
