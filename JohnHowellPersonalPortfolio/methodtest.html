@@ -133,9 +133,9 @@
   		poster.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
   		poster.onreadystatechange = function() {
         if (poster.readyState === 4 && poster.status === 200) {
+          console.log(poster.responseText);
           var response = JSON.parse(poster.responseText);
           var data = response.json;
-
             var table = "<table>";
             table += "<tr><th>Field</th><th>Value</th></tr>";
             table += "<tr><td>ID</td><td>" + data.id + "</td></tr>";
@@ -164,6 +164,7 @@
       putter.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
       putter.onreadystatechange = function() {
         if (putter.readyState === 4 && putter.status === 200) {
+          console.log(putter.responseText);
           var response = JSON.parse(putter.responseText);
           var data = response.json;
 
@@ -195,6 +196,7 @@
     deleter.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     deleter.onreadystatechange = function() {
       if (deleter.readyState === 4 && deleter.status === 200) {
+        console.log(deleter.responseText);
         var response = JSON.parse(deleter.responseText);
           var data = response.json;
 
