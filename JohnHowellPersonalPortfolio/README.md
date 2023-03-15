@@ -1,7 +1,5 @@
-John Howell
-A16532630
+Name: John Howell
 
-[Netlify Url](https://main--teal-pithivier-fda5b4.netlify.app/)
+PID: A16532630
 
-Notes:
-    I added the Styled CRUD and the Custom Dialog sections of the assignment (part 2 and 3) as feedback areas for my website. YSSou can find them by clicking the Resumefeed back or the Websitefeed links in the nav bar. 
+I implmented part 1 and 2 both as parts of the website and did not attempt part three due to the busyness of week 10 and finals. From the hompage you can click on Send Complaint/Complement for part 1 and Leave a Like for part 2 both located in the nav bar.

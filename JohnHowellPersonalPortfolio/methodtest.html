@@ -26,27 +26,91 @@
       background-color: #f2f2f2;
     }
   </style>
+  <style>
+    body {
+      font-family: sans-serif, Arial;
+      background-color:deepskyblue;
+      padding: 5px;
+      max-width: 500px;
+    }
+    footer{
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+    }
+    form {
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: Arial, sans-serif;
+      background-color: #2f0dec;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input[type="number"],
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+    textarea {
+      height: 150px;
+    }
+    button[type="button"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: 10px;
+      font-size: 16px;
+    }
+    button[type="button"]:hover {
+      background-color: #45a049;
+    }
+    output {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
+  <h1>Send Noctice to my Supervisor</h1>
 	<form id="article-form">
-    <label for="id">ID:</label>
+    <label for="id">Complaint/Complement ID:</label>
     <input type="number" id="id" name="id"><br>
 
-    <label for="article_name">Article Name:</label>
+    <label for="article_name">Complaint/Complement Subject(Article Name):</label>
     <input type="text" id="article_name" name="article_name"><br>
 
-    <label for="article_body">Article Body:</label>
+    <label for="article_body">Complaint/Complement (Article Body):</label>
     <textarea id="article_body" name="article_body"></textarea><br>
 
     <input type="hidden" id="date" name="date">
 
-    <button type="button" onclick="post()">Post Article</button>
-    <button type="button" onclick="put()">Submit</button>
-	  <p>Look at Example Article</p>
-	  <button type="button" onclick="get()">Request data</button>
+    <button type="button" onclick="post()">postBtn</button>
+    <button type="button" onclick="put()">putBtn</button>
+	  <p>Look at Raw JSON example</p>
+	  <button type="button" onclick="get()">getBtn</button>
 		<output id="gotten"></output>
     <p>Delete Content</p>
-    <button type="button" onclick="deleteArt()">deletebtn</button>
+    <button type="button" onclick="deleteArt()">deleteBtn</button>
     <output id="response"></output>
   </form>
   <script>
@@ -155,4 +219,7 @@
     deleter.send(data);
   }
   </script>
+  <footer>
+      <a href=https://delicate-bunny-bbdbd6.netlify.app> Back to Homepage</a>
+  </footer>
 </body>
